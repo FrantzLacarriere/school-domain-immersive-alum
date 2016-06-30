@@ -7,12 +7,8 @@ class School
   end
 
   def add_student(name, grade)
-    if (@roster[grade].is_a?(Array))
-      @roster[grade] << name
-    else
-      @roster[grade] = []
-      @roster[grade] << name
-    end
+    @roster[grade] ||= []
+    @roster[grade] << name
   end
 
   def grade(grade)
